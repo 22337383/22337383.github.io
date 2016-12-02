@@ -1,0 +1,28 @@
+*{
+	font-family: "Microsoft YaHei" !important;
+}
+li>img{
+	height: 80px;
+	width: 33%;
+}
+span>i{
+	position: absolute;
+	font-size: 25px;
+	right: 10px;
+	line-height: 35px;
+}
+.pl{
+	position: relative;
+}
+.bot{
+	position: absolute;
+	margin-top: 10px;
+}
+.nowrap{
+	overflow: visible !important;
+	white-space:pre-wrap !important;
+	margin-top:-10px !important; 
+}
+.left{
+	padding-left: 10px;
+}

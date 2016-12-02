@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>旋转木马轮播图</title>
+    <link rel="stylesheet" href="css/css.css"/>
+   <script type="text/javascript" src="./js/animate.js"></script>
+</head>
+<body>
+<div class="wrap" id="wrap">
+   <div class="slide" id="slide">
+       <ul>
+           <li><a href="#"><img src="images/slidepic1.jpg" alt=""/></a></li>
+           <li><a href="#"><img src="images/slidepic2.jpg" alt=""/></a></li>
+           <li><a href="#"><img src="images/slidepic3.jpg" alt=""/></a></li>
+           <li><a href="#"><img src="images/slidepic4.jpg" alt=""/></a></li>
+           <li><a href="#"><img src="images/slidepic5.jpg" alt=""/></a></li>
+       </ul>
+       <div class="arrow" id="arrow">
+           <a href="javascript:;" class="prev"></a>
+           <a href="javascript:;" class="next"></a>
+       </div>
+   </div>
+</div>
+<script type="text/javascript">
+    //  这是一个数组对象，存储了每个图片的信息
+    var json = [
+        {   //  1
+            width:400,
+            top:20,
+            left:50,
+            opacity:20,
+            z:2
+        },
+        {  // 2
+            width:500,
+            top:70,
+            left:0,
+            opacity:80,
+            z:3
+        },
+        {   // 3
+            width:600,
+            top:100,
+            left:300,
+            opacity:100,
+            z:4
+        },
+        {  // 4
+            width:500,
+            top:70,
+            left:600,
+            opacity:80,
+            z:3
+        },
+        {   //5
+            width:400,
+            top:20,
+            left:750,
+            opacity:20,
+            z:2
+        }
+    ];
+    var slide = document.getElementById("slide");
+    var arrow = document.getElementById("arrow");
+    var lis = document.getElementsByTagName("li");
+    slide.onmouseover = function(){
+        animate(arrow,{'opacity':100})
+    }
+    slide.onmouseout = function(){
+        animate(arrow,{'opacity':0})
+    }
+    var as = arrow.children;
+    change();
+    var jieliu = true;// 函数节流用来控制节奏的变量
+    for(var k in as){
+        // console.log([k]);
+        as[k].onclick = function(){
+            if (this.className == "prev") {
+                if (jieliu == true) {
+                    change(false);
+                    jieliu = false;
+                }
+                
+            }else{
+                if (jieliu == true) {
+                    change(true);
+                    jieliu = false;
+                }
+                
+            }
+        }
+    }
+
+    function change(flag){
+        if (flag) {
+            // 把最后一张图片追加到第一张位置
+            json.unshift(json.pop());
+        }else {
+            // 把第一张图片放到最后一张
+            json.push(json.shift());
+        }
+        // 每执行一次位置变化，就要遍历一次，图片就有了新的位置
+        for (var i = 0; i < json.length; i++) {
+            animate(lis[i],{
+                width: json[i].width,// 切勿用分号分割
+                top: json[i].top,
+                left: json[i].left,
+                opacity:json[i].opacity,
+                zIndex:json[i].z
+            },function(){
+                jieliu = true;
+            })
+            // console.log(json[i])
+        }
+    }
+</script>
+</body>
+</html>

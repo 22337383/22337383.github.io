@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>音乐</title>
+	<script type="text/javascript" src="../jquery.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.music{
+			width: 800px;
+			height: 40px;
+			margin: 100px auto;
+			border: 1px solid gray;
+		}
+		.music ul{
+			list-style: none;			
+		}
+		.music ul li{
+			width: 99px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			float: left;
+			border-right: 1px dashed gray;
+			cursor: pointer;
+			z-index: 1;
+			position: relative;
+			overflow: hidden;
+		}
+		.music li span{
+			width: 99px;
+			height: 40px;
+			z-index: -1;
+			position: absolute;
+			top: 40px;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="music">
+		<ul>
+			<li>
+			音乐符1
+			</li>
+			<li>音乐符2</li>
+			<li>音乐符3</li>
+			<li>音乐符4</li>
+			<li>音乐符5</li>
+			<li>音乐符6</li>
+			<li>音乐符7</li>
+			<li>音乐符8</li>
+		</ul>
+	</div>
+	<audio src="music/1.ogg"></audio>
+	<audio src="music/2.ogg"></audio>
+	<audio src="music/3.ogg"></audio>
+	<audio src="music/4.ogg"></audio>
+	<audio src="music/5.ogg"></audio>
+	<audio src="music/6.ogg"></audio>
+	<audio src="music/7.ogg"></audio>
+	<audio src="music/8.ogg"></audio>
+	<script type="text/javascript">
+		$(function(){
+			//去除最后一个li的边框线
+			$(".music li:last").css("border-right",0);
+			//插入span
+			$(".music li").prepend("<span></span>");
+			//遍历span的背景色
+			var arr = new Array("green","blue","orange","red","yellow","teal","purple","black");
+			$(".music span").each(function(i,e){
+				$(this).css("background-color",arr[i]);
+			})
+			// 动画部分
+			$(".music li").mouseenter(function() {
+				$(this).children(1).stop().animate({top:0},200);
+				//音频效果
+				$("audio").get($(this).index()).load();  // 加载
+                $("audio").get($(this).index()).play();  // 播放
+			}).mouseleave(function(){
+				$(this).children(1).stop().animate({top:40},200);
+			});
+			//键盘操作
+			$(window).keydown(function(event){
+				// unicode编码 键盘1到8
+				if (event.keyCode >= 49 && event.keyCode <= 56) {
+					// 执行键盘控制动画
+					var num = event.keyCode - 49;
+					$(".music li").eq(num).trigger("mouseenter");
+
+					setTimeout(function(){
+						$(".music li").eq(num).trigger("mouseleave");
+					},200)
+				}
+			})
+		})
+	</script>
+</body>
+</html>

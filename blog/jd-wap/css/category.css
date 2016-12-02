@@ -1,0 +1,98 @@
+
+/*满屏显示*/
+body{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    background: #fff;
+}
+
+/*分类大区块*/
+.jd_category{
+    padding-top: 45px;/*头部的高度是45px*/
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.jd_catLeft{
+    width: 90px;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 45px;
+    z-index: 999;
+}
+
+/*子盒子  滑动*/
+.jd_catLeft ul{
+    -webkit-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+}
+.jd_catLeft ul li{
+    height: 50px;
+    width: 90px;
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    line-height: 49px;
+    text-align: center;
+    background: #f3f4f6;
+}
+.jd_catLeft ul li.now{
+    border-right: 0;
+    background-color: #fff;
+}
+.jd_catLeft ul li.now a{
+    color: #d8505c;
+}
+.jd_catLeft ul li a{
+    color: #000;
+    font-family: sans-serif;
+    font-size: 12px;
+    display: block;
+}
+/*右分类*/
+.jd_catRight{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    padding-left:90px;
+    overflow: hidden;
+}
+.jd_catRight .jd_catRight_con{
+    padding: 10px 12px;
+}
+
+.jd_catRight .jd_catRight_con .banner{
+    width: 100%;
+}
+.jd_catRight .jd_catRight_con .banner img{
+    width: 100%;
+}
+
+.jd_catRight .jd_catRight_con .catType{
+    font-size: 12px;
+    font-family: sans-serif;
+    margin-top: 10px;
+}
+.jd_catRight .jd_catRight_con .catType h3{
+    line-height: 20px;
+    font-size: 12px;
+    color: #888;
+}
+.jd_catRight .jd_catRight_con .catType ul li{
+    width: 33.33%;
+    text-align: center;
+    float: left;
+    margin-top: 10px;
+}
+.jd_catRight .jd_catRight_con .catType ul li img{
+    height: 62px;
+}
+
+.jd_catRight .jd_catRight_con .catType ul li p{
+    line-height: 20px;
+}

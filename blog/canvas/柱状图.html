@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="konva/konva.js"></script>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+			background-color: #f0f0f0;
+			overflow: hidden;
+		}
+		div{
+			width: 100px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 220 126 66 90 -->
+	<div id="container"></div>
+	<script type="text/javascript">
+		var stage = new Konva.Stage({
+			container: 'container',
+			width: innerWidth,
+			height: innerHeight
+		})
+		var layer = new Konva.Layer();
+		stage.add(layer);
+
+		//柱状图的数据
+		var data = [
+			{ name: '前端', value: '.8', color: 'green'},
+			{ name: 'PHP', value: '.3', color: 'blue'},
+			{ name: 'Java', value: '.7', color: 'red'},
+			{ name: 'UI', value: '.9', color: 'orange'},
+			{ name: 'IOS', value: '.4', color: 'purple'},
+			{ name: 'Android', value: '.9', color: 'pink'}
+		];
+
+		var x0 = stage.width() / 8;
+		var y0 = stage.height() / 4 *3;
+		var width = stage.width() / 4 * 3;//宽度左右各留八分之一
+		var height = stage.height() / 2;//高度为整个屏幕的一般
+		//绘制底线
+		var baseLine = new Konva.Line({
+			points:[x0, y0, x0 + width, y0],
+			stroke:'teal',
+			strokeWidth:2,
+		})
+		layer.add(baseLine);
+
+
+		//绘制矩形
+		var rectWidth = width / data.length;//每个矩形加边距的宽度
+		for (var i = 0; i < data.length; i++) {
+			var rect = new Konva.Rect({
+			x: x0 + rectWidth * (1 / 4 + i),//左上角
+			y: y0 - data[i].value * height,
+			width: rectWidth / 2,
+			height: data[i].value * height,
+			fill: data[i].color,
+		})
+		//绘制顶部文字
+		var topText = new Konva.Text({
+			x: x0 + rectWidth * i,
+			y: y0 - data[i].value * height - 14,
+			fontSize: 14,			
+			align: 'center',
+			text: data[i].value * 100 + '%',
+			width:rectWidth,
+			fill: data[i].color,
+			name:'topTxt'
+		})
+		// 绘制底部文字
+		var botText = new Konva.Text({
+			x: x0 + rectWidth * (1 / 4 + i),
+			y: y0,
+			fontSize: 14,			
+			// align: 'center',
+			text: data[i].name,
+			width:rectWidth,
+			fill: data[i].color,
+			rotation: 30
+		})
+
+			layer.add(topText)
+			layer.add(botText)
+			layer.add(rect)
+		}
+		layer.draw()
+
+
+		//动画效果
+		stage.on('contentClick',function(){
+			//把高度清零在动画到原来高度
+			layer.find('Rect').each(function(item,index){
+				item.y(y0);
+				item.height(0);
+				item.to({
+					duration:1,
+					y: y0 - data[index].value * height,
+					height: data[index].value * height,
+				})
+			});
+			// 文字动画效果
+			layer.find('.topTxt').each(function(item,index) {
+				item.y(y0 - 14);
+				item.to({
+					duration: 1,
+					y: y0 - data[index].value * height - 14,
+				})
+			});
+		})
+		
+	</script>
+</body>
+</html>

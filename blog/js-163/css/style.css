@@ -1,0 +1,64 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+img{
+	vertical-align: top;
+}
+.w-slider{
+	width: 310px;
+	height: 265px;
+	background: #f3f3f3;
+	margin: 50px auto;
+	position: relative;
+	overflow: hidden;
+}
+.slider{
+	width: 310px;
+	height: 220px;
+
+}
+.slider-main{
+	width: 620px;
+	height: 220px;
+	/* background: pink; */
+}
+.slider-main-img{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.slider-ctrl{	
+	text-align: center;
+}
+.slider-ctrl-con{
+	display: inline-block;
+	width: 24px;
+	height: 20px;
+	background: url('../images/icon.png') no-repeat -24px -782px;
+	cursor: pointer;
+	margin: 5px;
+	/* 隐藏span里面的数字 */
+	text-indent: 30em;
+	overflow: hidden;
+}
+.current{
+	background: url('../images/icon.png') no-repeat -24px -762px;
+}
+.slider-ctrl-prev,
+.slider-ctrl-next{
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	width: 30px;
+	height: 35px;
+	cursor: pointer;
+	background: url('../images/icon.png') no-repeat 6px top;
+}
+.slider-ctrl-prev{
+	left: 0;
+}
+.slider-ctrl-next{
+	right: 0;
+	background-position: -6px -45px;
+}

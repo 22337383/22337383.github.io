@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+	}
+		#box{
+			position: relative;
+			width: 600px;
+			height: 200px;
+			border: 2px solid green;
+			margin: 100px auto;
+			/* overflow: auto; */
+			overflow: hidden;
+		}
+		#box img{
+			vertical-align: top;
+		}
+		#box ul{
+			position: absolute;
+			top: 0;
+			left: 0;
+			list-style: none;
+			width: 400%;/*2400px*/
+			height: 200px;
+
+		}
+		#box ul li{
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li><img src="images/01.jpg"></li>
+			<li><img src="images/02.jpg"></li>
+			<li><img src="images/03.jpg"></li>
+			<li><img src="images/04.jpg"></li>
+			<li><img src="images/01.jpg"></li>
+			<li><img src="images/02.jpg"></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		// 思路：设置一个定时器，不断改变ul这个盒子的值，当循环一遍后快速跳到第一张图片
+		var box = document.getElementById("box");
+		var ul = box.children[0];
+		var timer =null;
+		var num = 0;// 这个值就是ul盒子的left值
+		timer = setInterval(autoPlay,10);
+			function autoPlay(){
+			num--;// 盒子不断向左移动
+			// 条件判断,曾经错误：num == 0；
+			num <= -1200 ? num = 0 : num;
+			ul.style.left = num + "px";
+		}
+		box.onmousemove = function(){
+			clearInterval(timer);// 鼠标放上清除定时器
+		}
+		box .onmouseout = function(){
+			timer = setInterval(autoPlay,10);// 鼠标离开开启定时器
+		}
+	</script>
+</body>
+</html>

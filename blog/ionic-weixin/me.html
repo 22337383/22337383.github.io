@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>信息页</title>
+	<link rel="stylesheet" href="lib/css/ionic.css">
+	<script src="lib/js/ionic.bundle.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	body{
+		background: #f3f3f3;
+	}
+		#pic{
+			width: 60px;
+			height: 60px;
+			position: absolute;
+			top: 5px;
+			left: 10px;
+		}
+	</style>
+</head>
+<body ng-app="ionic">
+<ion-header-bar align-title="left" class="bar-dark">
+<h1 class="title">微信(55)</h1>
+<div class="buttons">
+<button class="button button-clear icon ion-android-search"></button>
+<button class="button button-clear icon ion-android-add"></button>
+</div>
+</ion-header-bar>
+	
+	<ion-content has-subheader="false">
+	<div class="padding"></div>
+	  <div class="list">	 
+		<div class="item">
+		<img id="pic" src="img/l1.png">
+		<div class="hp">
+		<h3>河南之家</h3>
+		<p>微信号：henanzhijia</p>
+		</div>
+		</div>
+	 </div>
+
+	 <div class="list">
+		<div class="item item-icon-left item-icon-right ">
+		<i class="icon ion-image positive"></i>
+		<p>相册</p>
+		</div>
+		<div class="item item-icon-left item-icon-right">
+		<i class="icon ion-ios-star balanced"></i>
+		<p>收藏</p>
+		</div>
+	 </div>
+
+	 <div class="list">
+		<div class="item item-icon-left item-icon-right">
+		<i class="icon ion-ios-albums positive"></i>
+		<p>钱包</p>
+		</div>
+		<div class="item item-icon-left item-icon-right">
+		<i class="icon ion-ios-photos positive"></i>
+		<p>卡包</p>
+		</div>
+	</div>
+	
+	 <div class="list">
+		<div class="item item-icon-left item-icon-right">
+		<i class="icon ion-happy-outline energized"></i>
+		<p>表情</p>
+		</div>
+	 </div>
+
+	 <div class="list">
+	 	<div class="item item-icon-left item-icon-right">
+		<i class="icon ion-gear-a positive"></i>
+		<p>设置</p>
+		</div>
+	 </div>
+	</ion-content>
+
+<div class="tabs tabs-icon-top">
+		<a href="index.html" class="tab-item has-badge">
+			<i class="icon ion-ios-chatbubble"></i>
+			微信
+			<i class="badge badge-assertive">55</i>
+		</a>
+		<a href="tel.html" class="tab-item">
+			<i class="icon ion-ios-personadd"></i>
+			通讯录
+		</a>
+		<a href="des.html" class="tab-item">
+			<i class="icon ion-ios-navigate"></i>
+			发现
+		</a>
+		<a href="me.html" class="tab-item balanced">
+			<i class="icon ion-person"></i>
+			我
+		</a>
+</div>
+</body>
+</html>

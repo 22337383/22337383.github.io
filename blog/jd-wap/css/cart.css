@@ -1,0 +1,306 @@
+body{
+	background: #f3f3f3;
+}
+/* 顶部通栏 */
+.jd_topbar{
+	width: 100%;
+	height: 44px;
+	background: url(../img/header-bg.png) repeat-x;
+	position: relative;
+	border-bottom: 1px solid #eee;
+	z-index: 1000;
+}
+.jd_topbar .icon_back{
+	background-position: -20px 0;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 12px;
+	left: 10px;
+}
+.jd_topbar form{
+	width: 100%;
+	padding:6px 40px;
+}
+.jd_topbar input{
+	width: 100%;
+	height: 30px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+}
+.jd_topbar .icon_menu{
+	height: 20px;
+    width: 20px;
+    background-position: -60px 0;
+    display: block;
+    margin: 12px 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.jd_topbar h3{
+	text-align: center;
+	line-height: 44px;
+}
+/* 支付安全提示 */
+.safe{
+	width: 100%;
+	height: 34px;
+	background: #fff;
+	text-align: center;
+	border-bottom: 1px solid #eee;
+}
+.safe p{
+	/* 块级转为行内块，才可以设置居中 */
+	display: inline-block;
+	width: 240px;
+	line-height: 34px;
+	position: relative;
+}
+.safe p::after{
+	content: "";
+	/* 图片一定要设置宽度并转为块级 */
+	display: block;
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	background: url(../img/safe_icon.png) no-repeat;
+	background-size: 18px 18px;
+	z-index: 999;
+	top: 8px;
+	left: -20px;
+}
+
+/* 内容 */
+.jd_shop{
+	margin-top: 10px;
+}
+.jd_shop .jd_title{
+	height: 34px;
+	width: 100%;
+	background: #fff;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	position: relative;
+}
+.jd_shop .jd_title .jd_check{
+	width: 40px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.jd_check_box{
+	height: 20px;
+    width: 20px;
+    margin: 8px 10px;
+    display: inline-block;
+    background: url(../img/shop-icon.png) no-repeat;
+    background-size: 50px 100px;
+    z-index: 1000;
+}
+.jd_check_box[checked]{
+    background-position: -25px 0;
+}
+.jd_shop .jd_title .jd_des{
+	position: relative;
+	padding-left: 40px;
+    padding-right: 10px;
+    font-size: 13px;
+}
+/* jd小图标 */
+.jd_shop .jd_title .jd_des .l_des::after{
+	content: "";
+	background: url(../img/buy-logo.png) no-repeat;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-size: 15px 13px;
+	position: absolute;
+	top: 10px;
+	left: 35px;
+}
+.jd_shop .jd_title .jd_des span.l_des,
+.jd_shop .jd_title .jd_des span.r_des{
+	display: inline-block;
+	height: 14px;
+	line-height: 34px;
+}
+.jd_shop .jd_title .jd_des span.l_des{
+	padding-left: 20px;
+}
+.jd_shop .jd_title .jd_des span.r_des{
+	position: absolute;
+	right: 10px;
+	color: orange;
+}
+/* 内容盒子 */
+.jd_content{
+	background: #fff;
+}
+.jd_content li{
+	position: relative;
+	border-bottom: 1px solid #eee;
+	/* padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 10px; */
+}
+
+.jd_content .content_check{
+	width: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.jd_content .jd_info a{
+	display: inline-block;
+}
+.jd_content .jd_info a img{
+	display: block;
+	height: 80px;
+    width: 80px;
+    border: 1px solid #e0e0e0;
+    /* float: left; */
+    margin-right: 10px;
+}
+.jd_content .jd_info{
+	padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 10px;
+	position: relative;
+}
+.jd_content .jd_info .info{
+	position: absolute;
+    top: 10px;
+    left: 135px;
+
+    height: 80px;
+    overflow: hidden;
+    font-size: 13px;
+}
+.jd_content .jd_info .price{
+	/* position: absolute; */
+	/* padding-top: 10px; */
+	font-size: 13px;
+
+}
+.jd_content .jd_info .change_box{
+	width: 100px;
+	height: 25px;
+	line-height: 25px;
+	border: 1px solid #eee;
+	border-radius: 2px;
+	/* margin: 5px; */
+}
+.jd_content .jd_info .change_box a.reduse,
+.jd_content .jd_info .change_box a.add{
+	line-height: 25px;
+	text-align: center;
+}
+.jd_content .jd_info .change_box a.reduse{
+	display: inline-block;
+	width: 25px;
+	border-right: 1px solid #eee;
+}
+.jd_content .jd_info .change_box input{
+	display: inline-block;
+	width: 35px;
+}
+.jd_content .jd_info .change_box a.add{
+	display: inline-block;
+	width: 25px;
+	border-left: 1px solid #eee;
+}
+/* 删除小图标 */
+.jd_content .jd_info .icon_del{
+	position: absolute;
+    width: 20px;
+    height: 5px;
+    background: url(../img/delete_up.png);
+    background-size: 20px 5px;
+    display: block;
+    margin-left: -1px;
+    right: 10px;
+    bottom: 34px;
+	
+}
+.jd_content .jd_info .icon_del::after{
+	content: "";
+    position: absolute;
+    bottom: -15px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../img/delete_down.png);
+    background-size: 18px 18px;
+    display: block;
+    margin-top: -3px;
+}
+/*底部操作栏*/
+.jd_option{
+    height: 57px;
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    left: 0;
+
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    z-index: 1000;
+}
+/*左侧  按钮*/
+.jd_option .option_check{
+    width: 60px;
+    height: 57px;
+    line-height: 57px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 200;
+}
+
+.jd_option .option_check .jd_check_box{
+    top: 13px;
+    left: 0px;
+    position: absolute;
+}
+.jd_option .option_check .jd_check_label{
+    margin-left: 35px;
+    font-size: 12px;
+}
+
+/*中间信息*/
+.jd_option .option_info{
+    width: 100%;
+    padding: 0 70px 0 70px;
+    height: 57px;
+    z-index: 199;
+}
+.jd_option .option_info .amount{
+    font-size: 16px;
+    line-height: 32px;
+}
+.jd_option .option_info .amount_dec{
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+/*右侧按钮*/
+.jd_option .option_submit{
+    width: 116px;
+    height: 57px;
+    line-height: 57px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    background: #f15353;
+    text-align: center;
+}
+.jd_option .option_submit a{
+    color: #fff;
+    font-size: 18px;
+}
+.jd_option .option_submit a span{
+    font-size: 12px;
+}

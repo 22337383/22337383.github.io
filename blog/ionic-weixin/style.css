@@ -1,0 +1,197 @@
+*{
+	font-family: "Microsoft YaHei" !important;
+}
+#avatar_img{
+	  	position: relative;
+	  }
+	#avatar_img img{
+		border-radius: 0px;
+	}
+	#avatar_img span{
+		position: absolute;
+		right: 10px;
+		top: 20px;
+	}
+	#avatar_img .badge{
+		left: 38px;
+		right: auto;
+		top: 8px;
+		font-size: 10px;
+	}
+#new_friend i{
+			color: #fff;
+
+		}
+		#new_friend {
+			position: relative;
+
+		}
+		#new_friend div{
+			width: 40px;
+			height: 40px;
+			font-size: 40px;
+			text-align: center;
+			line-height: 40px;
+			display: inline-block;
+		}
+		#new_friend span{
+			position: absolute;
+			top: 25px;
+			left: 70px;
+		}
+		#new_friend>div>span{
+			size: 16px;
+		}
+		
+		#item_avatar img{
+			border-radius: 0;
+		}
+
+		.char-index{
+			position: absolute;
+			top: 45px;
+			right: 5px;
+
+		}
+		.char-index li{
+			color: #666;
+		}
+
+		.index-center{
+			position: absolute;
+			width: 80px;
+			height: 80px;
+			background-color: rgba(128,128,128,.5);
+			top: 40%;
+			left: 50%;
+			margin-top: -40px;
+			margin-left: -40px;
+			font-size: 35px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			line-height: 80px;
+		}
+		
+		.hp{
+			margin-left: 70px;
+		}
+
+
+		#new_friend i{
+			color: #fff;
+
+		}
+		#new_friend {
+			position: relative;
+
+		}
+		#new_friend div{
+			width: 40px;
+			height: 40px;
+			font-size: 40px;
+			text-align: center;
+			line-height: 40px;
+			display: inline-block;
+		}
+		#new_friend span{
+			position: absolute;
+			top: 25px;
+			left: 70px;
+		}
+		#new_friend>div>span{
+			size: 16px;
+		}
+		
+		#item_avatar img{
+			border-radius: 0;
+		}
+
+		.char-index{
+			position: absolute;
+			top: 45px;
+			right: 5px;
+
+		}
+		.char-index li{
+			color: #666;
+		}
+
+		.index-center{
+			position: absolute;
+			width: 80px;
+			height: 80px;
+			background-color: rgba(128,128,128,.5);
+			top: 40%;
+			left: 50%;
+			margin-top: -40px;
+			margin-left: -40px;
+			font-size: 35px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			line-height: 80px;
+		}
+		#pic{
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+		}
+
+
+		#new_friend i{
+			color: #fff;
+
+		}
+		#new_friend {
+			position: relative;
+
+		}
+		#new_friend div{
+			width: 40px;
+			height: 40px;
+			font-size: 40px;
+			text-align: center;
+			line-height: 40px;
+			display: inline-block;
+		}
+		#new_friend span{
+			position: absolute;
+			top: 25px;
+			left: 70px;
+		}
+		#new_friend>div>span{
+			size: 16px;
+		}
+		
+		#item_avatar img{
+			border-radius: 0;
+		}
+
+		.char-index{
+			position: absolute;
+			top: 45px;
+			right: 5px;
+
+		}
+		.char-index li{
+			color: #666;
+		}
+
+		.index-center{
+			position: absolute;
+			width: 80px;
+			height: 80px;
+			background-color: rgba(128,128,128,.5);
+			top: 40%;
+			left: 50%;
+			margin-top: -40px;
+			margin-left: -40px;
+			font-size: 35px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			line-height: 80px;
+		}

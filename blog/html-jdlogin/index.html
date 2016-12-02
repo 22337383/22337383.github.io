@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="favicon.ico" rel="icon">
+	<title>京东登陆</title>
+	<style type="text/css">
+    body {
+    	font-family: "Microsoft YaHei";
+    }
+	.one-header{
+		min-width:1200px;
+		height: 100px;
+		background: #fff;
+		position: relative;
+		
+	}
+	.one-header img {
+		height:60px;
+		width:170px;
+		margin:10px 10px auto 200px;
+		display: inline-block;
+
+
+	}
+	.one-header span{
+		display: inline-block;
+        height: 30px;
+        width: 100px;
+        line-height: 30px;
+        font-size: 25px;
+        position: absolute;
+        top: 25px;
+        left: 380px;
+
+		
+	}
+	/*背景颜色设置*/
+	.bg-color {
+		width:100%;
+		height:475px;
+		background:#E93854;
+	}
+	/*背景图片设置*/
+	.bg {
+		width:100%;
+		height:475px;
+		background: url(bg.png) no-repeat center;
+
+	}
+	/*登陆页面布局*/
+	.one-login {
+	     background: #fff;
+	     width: 350px;
+	     height:370px;
+	     z-index: 999;
+	     margin-top: -450px;
+	     margin-left:800px;
+	     position: relative;
+	}
+	.one-login span {
+		display: inline-block;
+	}
+	/*登陆框设置*/
+	.login-name {
+		position: absolute;
+	    width:38px; 
+	    height: 38px;
+		background: url(jd.png) no-repeat;
+		border-right: 1px solid #BDBDBD;
+	    background-position:0px 0px;
+	    z-index: 1;
+	    margin: 21px;
+	    
+	}
+	/*密码框设置*/
+	.login-password{
+		position: absolute;
+	    width:38px; 
+	    height: 38px;		
+	    background: url(jd.png) no-repeat;
+	    border-right: 1px solid #BDBDBD;
+	    background-position:-49px 0px;
+	    z-index: 1;
+	    margin-top: 101px;
+	    margin-left: -326px;
+	  
+	}
+	input[type=text],input[type=password]{
+		width:300px; 
+		height:36px;
+		margin:20px;
+	    border:1px solid #BDBDBD;
+	    text-indent: 40px;
+	    position: relative;
+	}
+    .reg-btn {
+    	position: absolute;
+	    width:20px; 
+	    height: 20px;		
+	    background: url(jd.png) no-repeat;
+	    background-position:-100px -75px;
+	    z-index: 1;
+	    margin-top: 3px;
+	    margin-left: 45px;
+    }
+	button{
+	    width:300px; 
+	    height:40px;
+	    border:none;
+	    background:#E4393C;
+	    margin-top:30px;
+	    margin-left: 20px;
+	    font-size:20px;
+	    color:white;
+	}
+	.login-oper{
+        padding-top:20px;
+	}
+	 a{
+		text-decoration: none;
+		color: gray;
+	}
+	a:hover{
+		color: orange;
+	}
+	.last-footer{
+		padding:10px 20px;
+		width: 310px;
+		height:35px;
+		margin-top:-8px;
+		background: #f3f3f3;
+		position: relative;
+	}
+	/*页脚设置*/
+	.footer {
+		background: #f3f3f3;
+		width: 100%;
+		height:120px;
+		line-height: 30px;
+		text-align: center;
+        padding-top:50px;
+	}
+	</style>
+</head>
+<body>
+<div class="one-header">
+<img src="logo.png" alt="京东">	
+<span>欢迎登陆</span>
+</div>
+<form action="demo.html" method="post">
+<div class="bg-color">
+<div class="bg">
+</div>
+ <div class="one-login">
+	<span style="padding:20px;font-size:20px;">扫码登录</span>
+	<span style="padding:20px; padding-left:100px;font-size:20px;color:#E4393C;">账户登录</span>
+<hr>
+
+	  <span class="login-name"></span>
+	  <input type="text" placeholder=" 邮箱/用户名/已验证手机"/>
+
+	  <span class="login-password"></span>
+	  <input type="password" placeholder=" 请输入密码"/>
+
+	  <div class="login-oper">
+	  <input style="margin:8px 15px auto 20px; float:left;" name="" type="checkbox" value="" checked="checked" /><span>自动登录</span><span style="padding-left:120px"><a href="#">忘记密码</a></span>
+	  </div>
+	  	<button type="button" value="登 陆">登 陆</button>
+	  	<hr>
+	  	<div class="last-footer">
+	  	<a href="#">京东钱包 |</a>
+	  	<a href="#">QQ |</a>
+	  	<a href="#">微信 </a>
+
+	  	<span class="reg-btn"></span>
+	  	<a style="color:#E4393C;padding-left:80px" href="#">立即注册</a>
+	  	</div>
+    </div>
+</div> 
+</form>
+<div class="footer">
+	<span>关于我们 |
+	联系我们 |
+	人才招聘 |
+	商家入驻 |
+	手机京东 |
+	友情链接 |
+	销售联盟 |
+	京东社区
+	</span><br>
+	<span>Copyright © 2004-2016  京东JD.com 版权所有</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="konva/konva.js"></script>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+			background-color: #f0f0f0;
+			overflow: hidden;
+		}
+		div{
+			width: 100px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 220 126 66 90 -->
+	<div id="container"></div>
+	<script type="text/javascript">
+		var stage = new Konva.Stage({
+			container: 'container',
+			width: innerWidth,
+			height: innerHeight
+		})
+		var layer = new Konva.Layer();
+		stage.add(layer);
+
+		var data = [ 
+	    	{ name: "前端", value: .25, color: '#e0e'  },
+	    	{ name: "php",  value: .2,  color: 'orange'},
+	    	{ name: "UI",	value: .3,	color: 'blue'  },
+			{ name: "C++",	value: .05,	color: 'green' },
+			{ name: "游戏",	value: .1,	color: 'purple'},
+			{ name: "Java",	value: .1,	color: 'red'   }
+		];
+
+		var x0 = stage.width() / 2;
+		var y0 = stage.height() / 2;
+
+		var temAngle = 0;
+		data.forEach( function(item, index) {
+			var angle = item.value * 360
+			var wedge = new Konva.Wedge({
+				x: x0,
+				y: y0,
+				radius: 200,
+				angle: angle,
+				fill: item.color,
+				rotation: temAngle //起始角度
+			})
+			layer.add(wedge);
+			// 绘制百分比文字
+			var textAngle = temAngle + angle / 2;//文字的起始角度 = 饼状图的起始角度 + 旋转角度的一半
+			var text = new Konva.Text({
+				x: x0 + Math.cos(textAngle * Math.PI / 180) * (200 + 30),
+				y: y0 + Math.sin(textAngle * Math.PI / 180) * (200 + 30),
+				fill: item.color,
+				text: item.value * 100 + '%',
+				fontSize: 20
+			})
+			if (textAngle > 90 && textAngle < 270) {
+				text.x(text.x() - 30);//左半圆的文字移动一个文字宽度的距离
+			}
+			layer.add(text);
+			// 绘制内容文字
+			var conAngle = temAngle + angle / 2;//文字的起始角度 = 饼状图的起始角度 + 旋转角度的一半
+			var conText = new Konva.Text({
+				x: x0 + Math.cos(conAngle * Math.PI / 180) * (200 - 50),
+				y: y0 + Math.sin(conAngle * Math.PI / 180) * (200 - 50),
+				fill: '#fff',
+				text: item.name,
+				fontSize: 20
+			})
+			if (conAngle > 90 && conAngle < 270) {
+				conText.x(conText.x() - 50);//左半圆的文字移动一个文字宽度的距离
+			}
+			layer.add(conText);
+
+			temAngle += angle;//结束点作为下次的起点				
+		});
+		
+		// 绘制外边圆环
+		var circle = new Konva.Circle({
+			x: x0,
+			y: y0,
+			radius: 210,
+			stroke: '#ccc',
+			strokeWidth: 3
+		})
+		layer.add(circle)
+		layer.draw();
+
+
+		//动画部分
+		// 第一步清空原有的扇形区域
+		var index = 0;//动画索引
+		layer.find('Wedge').each(function(e,i) {
+			e.angle(0) //传值就是设置， 不传就是获取
+		});
+
+		/*layer.find('conAngle').each(function(e,i) {
+			e.text('0') //传值就是设置， 不传就是获取
+		});*/
+		function animate(){
+			var item = layer.find('Wedge')[index];// 要执行动画的扇形
+			item.to({
+				duration: data[index].value * 2,// 动画时长
+				angle: data[index].value * 360,//结束角度
+				onFinish:function(){
+					index ++;
+					if (index >= data.length) {
+						return false;
+					}
+					animate();
+				}
+			})
+		}
+		
+		animate()
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		canvas.width = 600;
+		canvas.height = 600;
+		canvas.style.border = "1px solid #000";
+		ctx.strokeStyle = "#f3f3f3";
+		// ctx.lineWidth = 1;
+		var step = 10;
+		for (var i = 0; i < canvas.width / step; i++) {
+			ctx.moveTo(0,i * step);
+			ctx.lineTo(canvas.width,i * step);
+
+			ctx.moveTo(i * step,0);
+			ctx.lineTo(i * step,canvas.height);
+
+		}
+		ctx.stroke();
+		ctx.closePath();
+
+
+		// x0 y0 坐标的原点位置，coor设置坐标的长度 arrow设置箭头的长度
+		var x0 = 100, y0 = 500, coorHeight = 300, coorWidth = 400, arrow = 20;
+		var coorHeightTo = y0 - coorHeight;//200
+		var coorWidthTo = x0 + coorWidth;//500
+		ctx.beginPath();
+		ctx.strokeStyle = "red";
+		ctx.moveTo(x0, y0);
+		ctx.lineTo(x0,coorHeightTo);
+		ctx.lineTo(x0 - arrow,coorHeightTo + arrow);
+		ctx.moveTo(x0,coorHeightTo);
+		ctx.lineTo(x0 + arrow,coorHeightTo + arrow);
+		ctx.stroke();
+		ctx.closePath();
+
+		ctx.beginPath();
+		ctx.strokeStyle = "green";
+		ctx.moveTo(x0, y0);
+		ctx.lineTo(coorWidthTo,y0);
+		ctx.lineTo(coorWidthTo - arrow,y0 + arrow);
+		ctx.moveTo(coorWidthTo,y0);
+		ctx.lineTo(coorWidthTo - arrow,y0 - arrow);
+		ctx.stroke();
+		ctx.closePath();
+		//折线图
+		var maxHeight = 300;
+		var data = [.5, .4, .8, .2, .6, .5];//json数据
+		ctx.beginPath();
+		ctx.strokeStyle = "orange";
+		for (var i = 0; i < data.length; i++) {
+			var infoWidth = 400 / (data.length + 1);//计算每个信息占据的宽度
+			var x = x0 + (i + 1) * infoWidth;
+			var y = y0 - data[i] * maxHeight;
+			ctx.lineTo(x, y)
+		}
+		ctx.stroke();
+		ctx.closePath();
+	</script>
+</body>
+</html>
