@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ol.nav {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			overflow: hidden;
+		}
+		ol.nav li{
+			float: left;
+		}
+		ol.nav li + li{
+			margin-left: 0.8em;
+		}
+		/* 通过padding值撑开的li，a具有相同区域的点击范围 */
+		ol.nav a {
+			display: block;
+			padding: 0.5em 0.8em;
+			text-decoration: none;
+			color: gray;
+			background: #f3f3f3;
+			border: 1px solid gray;
+		}
+		ol.nav a:hover,
+		ol.nav a:focus,
+		ol.nav a.active {
+			color: blue;
+			background: orange;
+		}
+		ol.nav a[rel="prev"],
+		ol.nav a[rel="next"] {
+			border: none;
+			background: none;
+		}
+		ol.nav a[rel="prev"]::before {
+			content: "\00AB";
+			padding-right: 0.8em;
+		}
+		ol.nav a[rel="next"]::after {
+			content: "\00BB";
+			padding-left: 0.8em;
+		}
+	</style>
+</head>
+<body>
+	<ol class="nav">
+		<li><a href="#" rel="prev">prev</a></li>
+		<li><a href="#">2</a></li>
+		<li><a class="active" href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#" rel="next">next</a></li>
+	</ol>
+</body>
+</html>

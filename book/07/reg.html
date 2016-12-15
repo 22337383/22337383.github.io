@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	/* 核心就是设置label左浮动，表单为块级，然后使用定位把提示信息定位到需要位置 */
+	/* 浮动的元素也可以设置对齐方向 */
+	/* 浮动后,其后面的元素会出现浮动环绕 */
+		fieldset {
+			border: none;
+		}
+		input[type="text"]{
+			display: block;
+			width: 20em;
+		}
+		label {
+			float: left;
+			width: 5em;
+			text-align: right;
+		}
+		fieldset div {
+			position: relative;
+		}
+		fieldset div span {
+			position: absolute;
+			/* 因为有换行 */
+			left:22em;
+		}
+	</style>
+</head>
+<body>
+	<fieldset>
+		<form>			
+			<div>
+				<label for="love">我的爱好：<span>请输入你的爱好</span></label>
+				<input type="text" name="" id="love">
+			</div>
+			<div>
+				<label for="demo">姓名：<span>请输入相关信息</span></label>
+				<input type="text" name="" id="demo">
+			</div>
+		</form>
+			
+	</fieldset>
+</body>
+</html>

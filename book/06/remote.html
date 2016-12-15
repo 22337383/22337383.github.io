@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    /* 远距离链接，核心思路是a内部定义两个span，并进行绝对定位。当鼠标经过a链接，两个span同时有变化 */
+		.r {
+			width: 330px;
+			height: 550px;
+			position: relative;
+		}
+
+		.r ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+
+		}
+		.r ul a {
+			display: block;
+			text-decoration: none;
+		}
+		/* 让span撑开a的大小 */
+		.r ul .box {
+			position: absolute;
+			width: 50px;
+			height: 60px;
+		}
+		.r .wang .box {
+			top: 30px;
+			left: 20px;
+			border: 1px solid transparent;
+		}
+		.r .hong .box {
+			top: 80px;
+			left: 50px;
+			border: 1px solid transparent;
+		}
+		.r .ming .box {
+			top: 200px;
+			left: 90px;
+			border: 1px solid transparent;
+		}
+		/* link绝对定位，排开链接 */
+		.r ul .link {
+			position: absolute;
+			right: -13em;
+			width: 10em;		
+		}
+		.r .wang .link {
+			top: 0;
+		}
+		.r .hong .link {
+			top: 2em;
+		}
+		.r .ming .link {
+			top: 4em;
+		}
+		/* 鼠标经过效果切换 */
+		.r a:hover .box {
+			border-color: red;
+		}
+		.r a:hover .link {
+			color: red;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="r">
+        <img src="img/nerdcore.jpg">
+        <ul>
+            <li class="wang">
+                <a href="#">
+                	<span class="box"></span>
+                    <span class="link">小王</span>
+                </a>
+            </li> 
+            
+            <li class="hong">
+                <a href="#">
+                	<span class="box"></span>
+                    <span class="link">小红</span>
+                </a>
+            </li>
+            
+            <li class="ming">
+                <a href="#">
+                	<span class="box"></span>
+                    <span class="link">小明</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    	.r {
+    		position: relative;
+    		width: 330px;
+    		height: 500px;
+    	}
+    	.r ul{
+    		padding: 0;
+    		margin: 0;
+    		list-style: none;
+    	}
+    	.r ul a {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			border: 1px solid transparent;
+			text-decoration: none;
+    	}
+    	.r ul .wang a {
+			top: 50px;
+			left: 70px;
+    	}
+    	.r ul .hong a {
+    		top: 100px;
+    		left: 200px;
+    	}
+    	.r ul .ming a {
+    		top: 300px;
+    		left: 150px;
+    	}
+    	/* span是相对于a进行定位 */
+    	.r ul span {
+    		position: absolute;
+    		bottom: -3em;
+    		/* 修饰 */
+    		background: orange;
+    		width: 5em;
+    		line-height: 2em;
+    		text-align: center;
+			/* 隐藏文本 */
+			left: -1000em;
+    	}
+    	.r ul a:hover {
+    		border-color: orange;
+    	}
+    	.r ul a:hover span {
+    		left: auto; 
+    	}
+    </style>
+</head>
+
+<body>
+    <div class="r">
+        <img src="img/nerdcore.jpg">
+        <ul>
+            <li class="wang">
+                <a href="#">
+                	<span>我是小明</span>
+                </a>
+            </li> 
+            
+            <li class="hong">
+                <a href="#">
+                	<span>我是小明</span>
+                </a>
+            </li>
+            
+            <li class="ming">
+                <a href="#">
+                	<span>我是小明</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

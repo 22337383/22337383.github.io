@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/* 水平固定，垂直可拉伸圆角，核心设置大盒子固定宽度，并给大盒子一个底部背景。给标题一个顶部背景，高度由段落撑开，通过设置标题和段落的内边距达到需要的样式 */
+		.box{
+			width: 418px;
+			background: teal url('img/bottom.gif') no-repeat bottom left;
+		}
+		.box h3{
+			background: teal url('img/top.gif') no-repeat top left;
+			padding: 20px 20px 0 20px;
+		}
+		.box p{
+			padding: 0 20px 10px 20px;
+		}
+		
+		/* 大盒子设置了固定框度，标题有一个顶部背景，段落有一个底部背景，中间的有一个平铺背景，这样就能实现带有渐变效果的边框 */
+		.box2{
+			width: 424px;
+			background: url('img/tile2.gif') repeat-y;
+			/* background: #f3f3f3; */
+		}
+		.box2 h3{
+			background: url('img/top2.gif') no-repeat top left;
+			padding: 20px 20px 0 20px;
+		}
+		.box2 .p2{
+			background: url('img/bottom2.gif') no-repeat bottom left;
+			padding: 0 20px 10px 20px;
+		}
+		
+		/* 滑动门技术，四个图片，四个div*/
+		.box3 {
+			width: 30em;
+			/* 左下圆角大背景 */
+			background: url('img/bottom-left.gif') no-repeat bottom left ;
+		}
+		.box3 .outer {
+			/* 右下圆角大背景 */
+			background: url('img/bottom-right.gif') no-repeat bottom right;
+		}
+		.box3 .inner {
+			/* 左上圆角小背景 */
+			background: url('img/top-left.gif') no-repeat top left;
+		}
+		.box3 h3 {
+			/* 右上圆角超小背景 */
+			background: url('img/top-right.gif') no-repeat top right;
+			padding: 20px 20px 0 20px;
+		}
+		.box3 p {
+			padding: 0 20px 10px 20px;
+		}
+		
+		/* 多图背景顺序：右上，左上，右下，左下 */
+		.box4 {
+			width: 15em;
+			background-image: 
+			url('img/top-right.gif'),
+			url('img/top-left.gif'),
+			url('img/bottom-right.gif'),
+			url('img/bottom-left.gif');
+
+			background-repeat: 
+			no-repeat,
+			no-repeat,
+			no-repeat,
+			no-repeat;
+
+			background-position: 
+			top right,
+			top left,
+			bottom right,
+			bottom left;
+		}
+		.box4 h3{
+			padding: 20px 20px 0 20px;
+		}
+		.box4 p{
+			padding: 0 20px 10px 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h3>这是一个标题</h3>
+		<p>这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落</p>
+	</div>
+
+	<div class="box2">
+		<h3>这是一个标题</h3>
+		<p class="p2">这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落</p>
+	</div>
+
+	<div class="box3">
+		<div class="outer">
+		<div class="inner">
+
+		<h3>这是一个标题</h3>
+		<p class="p3">这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落</p>
+
+		</div>
+		</div>
+	</div>
+
+	<!-- 利用css3实现的滑动门 -->
+	<div class="box4">
+		<h3>这是一个标题</h3>
+		<p class="p4">这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落</p>
+	</div>
+</body>
+</html>
